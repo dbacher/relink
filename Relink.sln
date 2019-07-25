@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Relink", "Relink\Relink.csproj", "{92BCA33C-332B-495B-A3DC-9A6D51A1ADF4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92BCA33C-332B-495B-A3DC-9A6D51A1ADF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92BCA33C-332B-495B-A3DC-9A6D51A1ADF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92BCA33C-332B-495B-A3DC-9A6D51A1ADF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92BCA33C-332B-495B-A3DC-9A6D51A1ADF4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2E69BC74-E5AE-4DAF-A4A6-A5EBCEC7BD63}
+	EndGlobalSection
+EndGlobal

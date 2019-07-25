@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Relink": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Windows\" \"C:\\Program Files (x86)\" \"C:\\Program Files\""
+    }
+  }
+}
