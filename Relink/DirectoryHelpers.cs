@@ -28,7 +28,7 @@ namespace Relink
         public static void CopyDirectory(string sourceFolder, string destinationFolder)
         {
             var sourceDirectory = new DirectoryInfo(sourceFolder);
-            if(!sourceDirectory.Exists)
+            if (!sourceDirectory.Exists)
                 throw new DirectoryNotFoundException($"Source folder not found: {sourceFolder}");
 
             var destinationDirectory = !Directory.Exists(destinationFolder)
@@ -40,18 +40,13 @@ namespace Relink
 
         public static void CopyDirectory(DirectoryInfo sourceDirectory, DirectoryInfo destinationDirectory)
         {
-            if(sourceDirectory == null)
-                throw new ArgumentException(nameof(sourceDirectory));
-            if(destinationDirectory == null)
-                throw new ArgumentException(nameof(destinationDirectory));
-
             var security = sourceDirectory.GetAccessControl();
 
             security.SetAccessRuleProtection(true, true);
             destinationDirectory.SetAccessControl(security);
 
             var dirsToCopy = sourceDirectory.GetDirectories();
-            foreach(var dirToCopy in dirsToCopy)
+            foreach (var dirToCopy in dirsToCopy)
             {
                 var destSubDirPath = Path.Combine(destinationDirectory.FullName, dirToCopy.Name);
                 var destinationSubDir = !Directory.Exists(destSubDirPath)
@@ -62,7 +57,7 @@ namespace Relink
 
             var filesToCopy = sourceDirectory.GetFiles();
 
-            foreach(var file in filesToCopy)
+            foreach (var file in filesToCopy)
             {
                 CopyFile(file, Path.Combine(destinationDirectory.FullName, file.Name));
             }

@@ -11,14 +11,14 @@ namespace Relink
         static void Main(string[] args)
         {
             // Find all links            
-            foreach(var arg in args)
+            foreach (var arg in args)
             {
-                foreach(var link in GetDirectoryLinks(arg))
+                foreach (var link in GetDirectoryLinks(arg))
                 {
                     DoDirectoryCopy(link);
                 }
 
-                foreach(var link in GetFileLinks(arg))
+                foreach (var link in GetFileLinks(arg))
                 {
                     DoFileCopy(link);
                 }
@@ -73,7 +73,7 @@ namespace Relink
             const string allowed = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
             sb.Append("-");
-            for(int i = 0; i < 5; i++)
+            for (int i = 0; i < 5; i++)
             {
                 sb.Append(allowed[rng.Next(allowed.Length - 1)]);
             }
@@ -84,7 +84,7 @@ namespace Relink
         static IEnumerable<string> GetDirectoryLinks(string path)
         {
             var allDirs = Directory.EnumerateDirectories(path);
-            foreach(var currentDir in allDirs)
+            foreach (var currentDir in allDirs)
             {
                 var isLink = false;
                 try
@@ -92,12 +92,13 @@ namespace Relink
                     var dirInfo = new DirectoryInfo(currentDir);
 
                     isLink = (dirInfo.IsSymbolicLink() && dirInfo.IsSymbolicLinkValid());
-                } catch(UnauthorizedAccessException uae)
+                }
+                catch (UnauthorizedAccessException uae)
                 {
                     Console.WriteLine($"*** Couldn't access {currentDir} - {uae.ToString()}");
                 }
 
-                if(isLink)
+                if (isLink)
                     yield return currentDir;
             }
         }
@@ -105,7 +106,7 @@ namespace Relink
         static IEnumerable<string> GetFileLinks(string path)
         {
             var allFiles = Directory.EnumerateFiles(path);
-            foreach(var currentFile in allFiles)
+            foreach (var currentFile in allFiles)
             {
                 var isLink = false;
                 try
@@ -113,12 +114,13 @@ namespace Relink
                     var fileInfo = new FileInfo(currentFile);
 
                     isLink = (fileInfo.IsSymbolicLink() && fileInfo.IsSymbolicLinkValid());
-                } catch(UnauthorizedAccessException uae)
+                }
+                catch (UnauthorizedAccessException uae)
                 {
                     Console.WriteLine($"*** Couldn't access {currentFile} - {uae.ToString()}");
                 }
 
-                if(isLink)
+                if (isLink)
                     yield return currentFile;
             }
         }
