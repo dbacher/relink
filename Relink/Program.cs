@@ -1,4 +1,6 @@
-﻿using SymbolicLinkSupport;
+﻿#nullable enable
+
+using SymbolicLinkSupport;
 using System;
 using System.Collections.Generic;
 using System.IO;
