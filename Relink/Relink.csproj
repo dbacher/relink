@@ -15,7 +15,7 @@
     <PackageReference Include="Microsoft.NETCore" Version="5.0.2" />
     <PackageReference Include="SymbolicLinkSupport" Version="1.2.0" />
     <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
-    <PackageReference Include="System.IO.FileSystem.AccessControl" Version="4.7.0" />
+    <PackageReference Include="System.IO.FileSystem.AccessControl" Version="5.0.0" />
     <PackageReference Include="System.IO.FileSystem.Primitives" Version="4.3.0" />
   </ItemGroup>
 
